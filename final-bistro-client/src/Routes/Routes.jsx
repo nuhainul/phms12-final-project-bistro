@@ -13,7 +13,11 @@ import Home from "../Pages/Home";
         {
             path: '/',
             element: <Home></Home>
-        }
+        },
+      //   {
+      //     path: '/',
+      //     element: <></>
+      // },
       ]
     },
   ]);

@@ -1,28 +1,33 @@
-Steps:  
+##Project Repo:
 
-1. created a single `repo` for both folders of client & server with a `README.md` & `steps.md`. 
+- https://github.com/nuhainul/phms12-final-project-bistro
 
-2. connected the parent folder with the repo.  
+#Steps:
 
-3. opened `parent folder > steps.md` in a vs code window using `cmd` > `code .` 
+1. created a single `repo` for both folders of client & server with a `README.md` & `steps.md`.
 
-4. went to  https://reactrouter.com/en/main/start/tutorial for setting client side 
+2. connected the parent folder with the repo.
 
-5. copied `npm create vite@latest name-of-your-project -- --template react` to create the `client-side` on terminal (via cmd) 
+3. opened `parent folder > steps.md` in a vs code window using `cmd` > `code .`
 
-6. run `cd bistro-boss-client-phm-final-project` on the terminal (important) 
+4. went to https://reactrouter.com/en/main/start/tutorial for setting client side
 
-7. copied `npm install react-router-dom localforage match-sorter sort-by` & pasted in the terminal again 
+5. copied `npm create vite@latest name-of-your-project -- --template react` to create the `client-side` on terminal (via cmd)
 
-8. [repeat] from step-5 (after deleting things) if errors happen (important) 
+6. run `cd bistro-boss-client-phm-final-project` on the terminal (important)
 
-9. went to https://tailwindcss.com/docs/guides/vite 
+7. copied `npm install react-router-dom localforage match-sorter sort-by` & pasted in the terminal again
 
-10. copied & runned `npm install -D tailwindcss postcss autoprefixer` first, then `npx tailwindcss init -p` 
+8. [repeat] from step-5 (after deleting things) if errors happen (important)
 
-11. opened the project using `code .` 
+9. went to https://tailwindcss.com/docs/guides/vite
 
-12. go to `tailwind.config.js` file to paste/replace `content: [],` with the following 
+10. copied & runned `npm install -D tailwindcss postcss autoprefixer` first, then `npx tailwindcss init -p`
+
+11. opened the project using `code .`
+
+12. go to `tailwind.config.js` file to paste/replace `content: [],` with the following
+
     ```
     content: [
         "./index.html",
@@ -30,31 +35,34 @@ Steps:
       ],
     ```
 
-13. went to `./src/index.css` file to replace everything with the following: 
+13. went to `./src/index.css` file to replace everything with the following:
+
     ```
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
     ```
 
-14. deleted everything in `./src/App.css` 
+14. deleted everything in `./src/App.css`
 
-15. went to `https://daisyui.com/docs/install/` to install daisyUI 
+15. went to `https://daisyui.com/docs/install/` to install daisyUI
 
-16. runned `npm i -D daisyui@latest` to install daisyUI 
+16. runned `npm i -D daisyui@latest` to install daisyUI
 
 17. added daisyUI to `tailwind.config.js` replacing `plugins: [],` with the following:
+
     ```
       plugins: [
         require('daisyui'),
       ],
     ```
 
-18. went to `.eslintrc.cjs` to replace `env: { browser: true, es2020: true },` with `env: { browser: true, es2020: true, node: true },` so that require-daisy does not show warning in tailwindcss-config 
+18. went to `.eslintrc.cjs` to replace `env: { browser: true, es2020: true },` with `env: { browser: true, es2020: true, node: true },` so that require-daisy does not show warning in tailwindcss-config
 
-19. runned `npm run dev -- --host` 
+19. runned `npm run dev -- --host`
 
-20. went to `main.jsx` to paste the following below line-4: 
+20. went to `main.jsx` to paste the following below line-4:
+
 ```
 import {
   createBrowserRouter,
@@ -64,7 +72,8 @@ import {
 
 21. replaced `<App />` with `<RouterProvider router={router} />`
 
-22. created `Routes/Routes.jsx` under `/src` & pasted the following codes into the file: 
+22. created `Routes/Routes.jsx` under `/src` & pasted the following codes into the file:
+
 ```
 import {
   createBrowserRouter,
@@ -79,15 +88,16 @@ const router = createBrowserRouter([
 ]);
 ```
 
-23. added `export` before `const router = createBrowserRouter([` 
+23. added `export` before `const router = createBrowserRouter([`
 
-24. added `import { router } from './Routes/Routes';` in `main.jsx` 
+24. added `import { router } from './Routes/Routes';` in `main.jsx`
 
-25. For nested routes, created `Layout/Main.jsx` under `/src` [*capitalization important*] & added/imported `<Outlet>` from react-router-dom. 
+25. For nested routes, created `Layout/Main.jsx` under `/src` [*capitalization important*] & added/imported `<Outlet>` from react-router-dom.
 
-26. created `Pages/Home.jsx` under `./src` & used `rsc` emmit. 
+26. created `Pages/Home.jsx` under `./src` & used `rsc` emmit.
 
-27. went to `Routes.jsx`, added the `<Home>` to the routes (see code below), and imported `Home` & `Main`. 
+27. went to `Routes.jsx`, added the `<Home>` to the routes (see code below), and imported `Home` & `Main`.
+
 ```
 import {
     createBrowserRouter,
@@ -95,7 +105,7 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home";
-  
+
   export const router = createBrowserRouter([
     {
       path: "/",
@@ -110,18 +120,53 @@ import Home from "../Pages/Home";
   ]);
 ```
 
-28. created `Shared/Footer.jsx` under `/src` & used `rsc` emmit. 
+28. created `Shared/Footer.jsx` under `/src` & used `rsc` emmit.
 
-29. added `<Footer>` under `<Outlet>` on `Layout/Main.jsx`. 
+29. added `<Footer>` under `<Outlet>` on `Layout/Main.jsx`.
 
-30. copied a daisyUI footer component & modified. 
+30. copied a daisyUI footer component & modified.
 
-31. on `src/main.jsx` (*capitalization important*), replaced `<RouterProvider router={router} />` with: 
+31. on `src/main.jsx` (_capitalization important_), replaced `<RouterProvider router={router} />` with:
+
 ```
 <div className="max-w-screen-xl mx-auto">
       <RouterProvider router={router} />
     </div>
 ```
 
-32. 
+32. created `/src/Shared/NavBar.jsx`, and added/imported it to `/src/Layout/Main.jsx`.
+
+33. broghut a **responsive** navbar from daisyUI & modified (especially applied fixed position). `py-18` padding given to `<Outlet>`.
+
+34. went to https://github.com/leandrowd/react-responsive-carousel, copied `react-responsive-carousel` & runned `npm i react-responsive-carousel` to install it.
+
+35. created `/src/Components/Banner.jsx`, runned `rsc` emmit, and pasted the following: 
+```import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+```
+
+36. copied & pasted the following from the mentioned webpage:
+```
+<Carousel>
+                <div>
+                    <img src="assets/1.jpeg" />
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                    <img src="assets/2.jpeg" />
+                    <p className="legend">Legend 2</p>
+                </div>
+                <div>
+                    <img src="assets/3.jpeg" />
+                    <p className="legend">Legend 3</p>
+                </div>
+</Carousel>
+```
+
+37. copied the `assets` from the resource (repo) provided to `/src/asstets/assets`, and updated the image `src`s after importing them. (*important to check out the filename extensions & if the filenames have 0 at the beginning*) 
+
+38. added the `<Banner>` on `Home.jsx`. 
+
+39. 
+
 
