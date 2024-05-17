@@ -193,6 +193,12 @@ import { Carousel } from 'react-responsive-carousel';
 
 51. created `src/Components/Featured.jsx ` & added it to `Home.jsx`. 
 
-52. added  `./Featured.css` & imported it to `Featured.jsx`.
+52. added  `./Featured.css` & imported it to `Featured.jsx`, and implemented **parallax**. 
 
-53. 
+53. **Testimonials**: created `src/Components/Testimonials.jsx ` & added it to `Home.jsx`.
+
+54. installed *react rating* using `npm i @smastrom/react-rating`. 
+
+55. swiper navigation is yet to fixed #TODO 
+
+56. 
