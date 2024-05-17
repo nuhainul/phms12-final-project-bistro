@@ -191,4 +191,8 @@ import { Carousel } from 'react-responsive-carousel';
 
 50. added `<PopularMenu>` to `Home.jsx`. 
 
-51. 
+51. created `src/Components/Featured.jsx ` & added it to `Home.jsx`. 
+
+52. added  `./Featured.css` & imported it to `Featured.jsx`.
+
+53. 
