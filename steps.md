@@ -85,4 +85,43 @@ const router = createBrowserRouter([
 
 25. For nested routes, created `Layout/Main.jsx` under `/src` [*capitalization important*] & added/imported `<Outlet>` from react-router-dom. 
 
-26. went to `Routes.jsx`, 
+26. created `Pages/Home.jsx` under `./src` & used `rsc` emmit. 
+
+27. went to `Routes.jsx`, added the `<Home>` to the routes (see code below), and imported `Home` & `Main`. 
+```
+import {
+    createBrowserRouter,
+    // RouterProvider,
+  } from "react-router-dom";
+import Main from "../Layout/Main";
+import Home from "../Pages/Home";
+  
+  export const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Main></Main>,
+      children: [
+        {
+            path: '/',
+            element: <Home></Home>
+        }
+      ]
+    },
+  ]);
+```
+
+28. created `Shared/Footer.jsx` under `/src` & used `rsc` emmit. 
+
+29. added `<Footer>` under `<Outlet>` on `Layout/Main.jsx`. 
+
+30. copied a daisyUI footer component & modified. 
+
+31. on `src/main.jsx` (*capitalization important*), replaced `<RouterProvider router={router} />` with: 
+```
+<div className="max-w-screen-xl mx-auto">
+      <RouterProvider router={router} />
+    </div>
+```
+
+32. 
+
