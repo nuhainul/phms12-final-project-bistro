@@ -136,7 +136,7 @@ import Home from "../Pages/Home";
 
 32. created `/src/Shared/NavBar.jsx`, and added/imported it to `/src/Layout/Main.jsx`.
 
-33. broghut a **responsive** navbar from daisyUI & modified (especially applied fixed position). `py-18` padding given to `<Outlet>`.
+33. broghut a **responsive** navbar from daisyUI & modified (especially applied fixed position). `py-16` padding given to `<Outlet>`.
 
 34. went to https://github.com/leandrowd/react-responsive-carousel, copied `react-responsive-carousel` & runned `npm i react-responsive-carousel` to install it.
 
@@ -167,6 +167,28 @@ import { Carousel } from 'react-responsive-carousel';
 
 38. added the `<Banner>` on `Home.jsx`. 
 
-39. 
+39. went to https://swiperjs.com/get-started and https://swiperjs.com/demos
 
+40. installed SwiperJS using `npm install swiper` command. 
 
+41. created `/src/Components/Category.jsx` to use Swiper & modified codes copied from Swiperjs.com.
+
+42. created `/src/Shared/SectionTitle.jsx` & wrote the function.  
+
+43. added `<SectionTitle>` to `Category.jsx`. 
+
+44. add `<Category>` to `Home.jsx`. 
+
+45. as Swiper's `Pagination` is causing errors, commented a couple of lines (marked `//TODO`) for later. (N.B. Phm52.5-reward may help.) 
+
+46. created `src/Components/PopularMenu.jsx`, and started writing code. 
+
+47. placed `menu.json` & `reviews.json` (collected from provided resource repo) in `public` folder. 
+
+48. created `src/Shared/MenuItem.jsx` & wrote code. 
+
+49. went to `PopularMenu.jsx` & imported `<MenuItem>` & continued code. 
+
+50. added `<PopularMenu>` to `Home.jsx`. 
+
+51. 
