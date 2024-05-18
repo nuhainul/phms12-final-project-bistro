@@ -1,7 +1,5 @@
 // import React from 'react';
-
-// import Cover from '../../Shared/Cover/Cover';
-import menuImg from '../assets/assets/menu/menu-bg.jpg'
+import menuImg from '../assets/assets/menu/menu-bg.png'
 import soupImg from '../assets/assets/menu/soup-bg.jpg'
 import saladImg from '../assets/assets/menu/salad-bg.jpg'
 import pizzaImg from '../assets/assets/menu/pizza-bg.jpg'
@@ -10,8 +8,7 @@ import SectionTitle from '../Shared/SectionTitle'
 import { Helmet } from 'react-helmet-async'
 import Cover from '../Shared/Cover'
 import useMenu from '../Hooks/useMenu'
-// import useMenu from '../../../hooks/useMenu';
-// import MenuCategory from '../MenuCategory/MenuCategory';
+import MenuCategory from './MenuCategory'
 
 
 const Menu = () => {

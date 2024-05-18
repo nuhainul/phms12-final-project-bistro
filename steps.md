@@ -1,10 +1,10 @@
-##Project Repo:
+## Project Repo:
 
 - https://github.com/nuhainul/phms12-final-project-bistro
 
-#Steps:
+# Steps:
 
-###Part-1
+### Part-1
 
 1. created a single `repo` for both folders of client & server with a `README.md` & `steps.md`.
 
@@ -265,8 +265,12 @@ and added `<title>` importing `<Helmet>` in `Menu.jsx` & `Home.jsx`.
 
 65. created `src/Hooks/useMenu.jsx` & coded. 
 
-66. imported `useMenu` and `Cover.jsx` in `Menu.jsx`. 
+66. worked on `PopularMenu.jsx` importing `useMenu` (commented codes are replaced by the new ones). 
 
-67. worked on `PopularMenu.jsx` importing `useMenu` (commented codes are replaced by the new ones). 
+67. imported `useMenu` and `Cover.jsx` in `Menu.jsx`, and applied **filter**.
 
-68. c
+68. created `src/Pages/MenuCategory.jsx` & imported it to `Menu.jsx`. 
+
+69. imported/updated `<Menu>` to `Routes.jsx`. 
+
+70. 
