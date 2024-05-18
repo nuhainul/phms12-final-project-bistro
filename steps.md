@@ -273,4 +273,9 @@ and added `<title>` importing `<Helmet>` in `Menu.jsx` & `Home.jsx`.
 
 69. imported/updated `<Menu>` to `Routes.jsx`. 
 
-70. 
+70. created `src/Pages/Order.jsx`, went to `Routes.jsx` to add it's path/route, and went to `NavBar.jsx` & updated `Link` to the route. 
+
+<!-- 65-5, # 2:00 -->
+
+71. created `src/Components/FoodCard.jsx` 
+
