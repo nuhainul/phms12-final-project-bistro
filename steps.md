@@ -277,5 +277,19 @@ and added `<title>` importing `<Helmet>` in `Menu.jsx` & `Home.jsx`.
 
 <!-- 65-5, # 2:00 -->
 
-71. created `src/Components/FoodCard.jsx` 
+71. installed `react-tabs` using `npm install --save react-tabs` and imported the following to `Order.jsx`: 
+```
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+```  
+
+72. brought *lifted* tab from `daisyUI` & re-coded. 
+
+73. brought *menu*-list from `Menu.jsx` to `Order.jsx`. 
+
+74. copied `const { name, image, price, recipe } = item;` from `MenuItem.jsx` to `FoodCard.jsx`. 
+
+75. copied a *card* from daisyUI & created `src/Components/FoodCard.jsx`. 
+
+<!-- 76. 65-6 to be practised -->
 

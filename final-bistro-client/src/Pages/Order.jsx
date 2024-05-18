@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import orderCoverImg from '../assets/assets/shop/order.jpg'
+import orderCoverImg from '../assets/assets/shop/banner2.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useParams } from 'react-router';
@@ -8,6 +8,7 @@ import useMenu from '../Hooks/useMenu';
 import Cover from '../Shared/Cover';
 
 const Order = () => {
+    // const [tabIndex, setTabIndex] = useState(0);
     const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks'];
     const { category } = useParams();
     const initialIndex = categories.indexOf(category);
