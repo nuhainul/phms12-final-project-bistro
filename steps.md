@@ -4,6 +4,8 @@
 
 #Steps:
 
+###Part-1
+
 1. created a single `repo` for both folders of client & server with a `README.md` & `steps.md`.
 
 2. connected the parent folder with the repo.
@@ -140,12 +142,14 @@ import Home from "../Pages/Home";
 
 34. went to https://github.com/leandrowd/react-responsive-carousel, copied `react-responsive-carousel` & runned `npm i react-responsive-carousel` to install it.
 
-35. created `/src/Components/Banner.jsx`, runned `rsc` emmit, and pasted the following: 
+35. created `/src/Components/Banner.jsx`, runned `rsc` emmit, and pasted the following:
+
 ```import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 ```
 
 36. copied & pasted the following from the mentioned webpage:
+
 ```
 <Carousel>
                 <div>
@@ -163,42 +167,106 @@ import { Carousel } from 'react-responsive-carousel';
 </Carousel>
 ```
 
-37. copied the `assets` from the resource (repo) provided to `/src/asstets/assets`, and updated the image `src`s after importing them. (*important to check out the filename extensions & if the filenames have 0 at the beginning*) 
+37. copied the `assets` from the resource (repo) provided to `/src/asstets/assets`, and updated the image `src`s after importing them. (_important to check out the filename extensions & if the filenames have 0 at the beginning_)
 
-38. added the `<Banner>` on `Home.jsx`. 
+38. added the `<Banner>` on `Home.jsx`.
 
 39. went to https://swiperjs.com/get-started and https://swiperjs.com/demos
 
-40. installed SwiperJS using `npm install swiper` command. 
+40. installed SwiperJS using `npm install swiper` command.
 
 41. created `/src/Components/Category.jsx` to use Swiper & modified codes copied from Swiperjs.com.
 
-42. created `/src/Shared/SectionTitle.jsx` & wrote the function.  
+42. created `/src/Shared/SectionTitle.jsx` & wrote the function.
 
-43. added `<SectionTitle>` to `Category.jsx`. 
+43. added `<SectionTitle>` to `Category.jsx`.
 
-44. add `<Category>` to `Home.jsx`. 
+44. add `<Category>` to `Home.jsx`.
 
-45. as Swiper's `Pagination` is causing errors, commented a couple of lines (marked `//TODO`) for later. (N.B. Phm52.5-reward may help.) 
+45. as Swiper's `Pagination` is causing errors, commented a couple of lines (marked `//TODO`) for later. (N.B. Phm52.5-reward may help.)
 
-46. created `src/Components/PopularMenu.jsx`, and started writing code. 
+46. created `src/Components/PopularMenu.jsx`, and started writing code.
 
-47. placed `menu.json` & `reviews.json` (collected from provided resource repo) in `public` folder. 
+47. placed `menu.json` & `reviews.json` (collected from provided resource repo) in `public` folder.
 
-48. created `src/Shared/MenuItem.jsx` & wrote code. 
+48. created `src/Shared/MenuItem.jsx` & wrote code.
 
-49. went to `PopularMenu.jsx` & imported `<MenuItem>` & continued code. 
+49. went to `PopularMenu.jsx` & imported `<MenuItem>` & continued code.
 
-50. added `<PopularMenu>` to `Home.jsx`. 
+50. added `<PopularMenu>` to `Home.jsx`.
 
-51. created `src/Components/Featured.jsx ` & added it to `Home.jsx`. 
+51. created `src/Components/Featured.jsx ` & added it to `Home.jsx`.
 
-52. added  `./Featured.css` & imported it to `Featured.jsx`, and implemented **parallax**. 
+52. added `./Featured.css` & imported it to `Featured.jsx`, and implemented **parallax**.
 
 53. **Testimonials**: created `src/Components/Testimonials.jsx ` & added it to `Home.jsx`.
 
-54. installed *react rating* using `npm i @smastrom/react-rating`. 
+54. installed _react rating_ using `npm i @smastrom/react-rating`.
 
-55. swiper navigation is yet to fixed #TODO 
+55. swiper navigation is yet to fixed #TODO. _Fix: I mistakenly installed things related to this in one directory up using vs code bash. So, it's better install things using `cmd` & double check which folder is opened in `cmd`_.
 
-56. 
+###Part-2
+
+56. created `src/Pages/Menu.jsx`, and went to `src/Routes/Routes.jsx` to update the route.
+
+57. installed `react-helmet-async` using `npm i react-helmet-async`.
+
+58. started coding in `Menu.jsx`.
+
+59. copied `logo.png` from `src/assets/assets` to `public` & updated `<title>` & `<link rel="icon" type="image/svg+xml" href="logo.png" />` in `index.html`.
+
+60. went to `NavBar.jsx`, updated `<a>`s to `Link`s, added `Menu` to the list.
+
+61. went to `src/main.jsx` & pasted `import { HelmetProvider } from 'react-helmet-async';` and replaced
+
+```
+<div className="max-w-screen-xl mx-auto">
+    <RouterProvider router={router} />
+</div>
+```
+
+with
+
+```
+<HelmetProvider>
+      <div className="max-w-screen-xl mx-auto">
+        <RouterProvider router={router} />
+      </div>
+    </HelmetProvider>
+```
+
+and added `<title>` importing `<Helmet>` in `Menu.jsx` & `Home.jsx`.
+
+62. created `src/Shared/Cover.jsx`.
+
+63. imported `menuImg` to `Menu.jsx`.
+
+64. installed `react-parallax-component` from `https://github.com/keske/react-parallax-component` using `npm install react-parallax` & imported `Parallax` using `import { Parallax } from 'react-parallax';` to `Cover.jsx` & used as follows:
+
+```
+<Parallax
+            blur={{ min: -50, max: 50 }}
+            bgImage={img}
+            bgImageAlt="the menu"
+            strength={-200}
+>
+<div className="hero h-[700px]">
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md">
+                        <h1 className="mb-5 text-5xl font-bold uppercase">{title}</h1>
+                        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+
+                    </div>
+                </div>
+            </div>
+</Parallax>
+```
+
+65. created `src/Hooks/useMenu.jsx` & coded. 
+
+66. imported `useMenu` and `Cover.jsx` in `Menu.jsx`. 
+
+67. worked on `PopularMenu.jsx` importing `useMenu` (commented codes are replaced by the new ones). 
+
+68. c

@@ -14,6 +14,10 @@ import Home from "../Pages/Home";
             path: '/',
             element: <Home></Home>
         },
+        {
+          path: '/menu',
+          element: <></>
+      },
       //   {
       //     path: '/',
       //     element: <></>
