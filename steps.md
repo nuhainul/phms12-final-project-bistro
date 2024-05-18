@@ -268,14 +268,12 @@ and added `<title>` importing `<Helmet>` in `Menu.jsx` & `Home.jsx`.
 66. worked on `PopularMenu.jsx` importing `useMenu` (commented codes are replaced by the new ones). 
 
 67. imported `useMenu` and `Cover.jsx` in `Menu.jsx`, and applied **filter**.
-
+ 
 68. created `src/Pages/MenuCategory.jsx` & imported it to `Menu.jsx`. 
 
 69. imported/updated `<Menu>` to `Routes.jsx`. 
 
 70. created `src/Pages/Order.jsx`, went to `Routes.jsx` to add it's path/route, and went to `NavBar.jsx` & updated `Link` to the route. 
-
-<!-- 65-5, # 2:00 -->
 
 71. installed `react-tabs` using `npm install --save react-tabs` and imported the following to `Order.jsx`: 
 ```
@@ -291,5 +289,16 @@ import 'react-tabs/style/react-tabs.css';
 
 75. copied a *card* from daisyUI & created `src/Components/FoodCard.jsx`. 
 
-<!-- 76. 65-6 to be practised -->
+76. coded in `Order.jsx` and `FoodCard.jsx`. 
 
+77. created `src/Components/OrderTab.jsx` to replace `FoodCard.jsx` so that we can avoid repeating a bunch of codes. 
+
+78. Swiper `pagination` is creating problems again saying `SyntaxError: The requested module '/node_modules/.vite/deps/swiper.js?v=aa9baf0d' does not provide an export named 'Pagination'`. **Search for `TODO` to fix it later.** 
+
+79. updated `Routes.jsx` replacing `path: 'order',` with `path: 'order/:category',`; and replaced ``<Link to={`/order`}>`` on `MenuCategory.jsx` with ``<Link to={`/order/${title}`}>``. 
+
+80. worked on `Order.jsx` and `OrderTab.jsx`. 
+
+81. **error:** `useMenu.jsx` is not providing data  to `/Order/salad` as another level down is routed. So, we created a server. 
+
+82. **Server-side:** 
