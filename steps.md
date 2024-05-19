@@ -24,7 +24,7 @@
 
 9. went to https://tailwindcss.com/docs/guides/vite
 
-10. copied & runned `npm install -D tailwindcss postcss autoprefixer` first, then `npx tailwindcss init -p`
+10. copied & ran `npm install -D tailwindcss postcss autoprefixer` first, then `npx tailwindcss init -p`
 
 11. opened the project using `code .`
 
@@ -49,7 +49,7 @@
 
 15. went to `https://daisyui.com/docs/install/` to install daisyUI
 
-16. runned `npm i -D daisyui@latest` to install daisyUI
+16. ran `npm i -D daisyui@latest` to install daisyUI
 
 17. added daisyUI to `tailwind.config.js` replacing `plugins: [],` with the following:
 
@@ -61,7 +61,7 @@
 
 18. went to `.eslintrc.cjs` to replace `env: { browser: true, es2020: true },` with `env: { browser: true, es2020: true, node: true },` so that require-daisy does not show warning in tailwindcss-config
 
-19. runned `npm run dev -- --host`
+19. ran `npm run dev -- --host`
 
 20. went to `main.jsx` to paste the following below line-4:
 
@@ -140,9 +140,9 @@ import Home from "../Pages/Home";
 
 33. broghut a **responsive** navbar from daisyUI & modified (especially applied fixed position). `py-16` padding given to `<Outlet>`.
 
-34. went to https://github.com/leandrowd/react-responsive-carousel, copied `react-responsive-carousel` & runned `npm i react-responsive-carousel` to install it.
+34. went to https://github.com/leandrowd/react-responsive-carousel, copied `react-responsive-carousel` & ran `npm i react-responsive-carousel` to install it.
 
-35. created `/src/Components/Banner.jsx`, runned `rsc` emmit, and pasted the following:
+35. created `/src/Components/Banner.jsx`, ran `rsc` emmit, and pasted the following:
 
 ```import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -301,4 +301,108 @@ import 'react-tabs/style/react-tabs.css';
 
 81. **error:** `useMenu.jsx` is not providing data  to `/Order/salad` as another level down is routed. So, we created a server. 
 
-82. **Server-side:** 
+82. **Server-side:** opned the directory parent to the *client-side* using `cmd` and ran `mkdir final-bistro-server`.
+
+83. then `cd final-bistro-server`. 
+
+84. then `npm init -y`. 
+
+85. then `npm i express cors dotenv mongodb`. [better if *server-side* is opened in a new VS Code window]
+
+86. created `index.js` on *server-side*. 
+
+87. wrote: 
+```
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const port = process.env.PORT || 5000;
+
+// middleware
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('bistro server is running')
+})
+
+app.listen(port, () => {
+  console.log(`Bistro server is running on port ${port}`);
+})
+```
+
+88. ran the server on `cmd` using `nodemon index.js`. 
+
+89. error: `'nodemon' is not recognized as an internal or external command,
+operable program or batch file.` **Solution**: As per Gemini suggested to install *nodemon* globally using `npm install -g nodemon`. 
+
+90. went to `mongodb atlas` > `Database` > `Browse Collections` > `+ Create Database`.  
+
+91. named the DB `bistroDb` & the collection `menu`. 
+
+92. under `menu` collection, > `Insert Document` > `{}`. 
+
+
+93. Deleted the sample data and pasted data from `menu.json` file already placed in the client-side public directory (after clearing all `_id` data). 
+
+94. created `reviews` collection (by clicking on the `⊕` icon right to the Database Name) and pasted data the same way from `reviews.json`. 
+
+95. time to set up `.env`. 
+
+96. added `require('dotenv').config()` to line-4 of server-side `index.js`. 
+
+97. created `.gitignore` in the root (where `package.json` is) of the server-side and wrote: 
+```
+node_modules
+.env
+.local
+.env.local
+*.local
+``` 
+
+98. [65-7:12] created Database User (`bistro*****`) going through `Database Access` > `+Add New Database User`. 
+
+99. went to *server-side* to create `/.env` to update the DB_USER & DB_PASS: 
+```
+DB_USER=bistro****
+DB_PASS=***********
+```
+
+100. went to *mongodb atlas* > `Database` > `Connect` > `Drivers` and copied: 
+```
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://<username>:<password>@cluster0.mcet7hn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+```
+
+101. pasted the code after line-10 of *server-side* `index.js` right below the following: 
+```
+// middleware
+app.use(cors());
+app.use(express.json());
+```
+
+<!-- 102. [start 65-8] -->

@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#00ff51f0"
+    },
+    "editor.wordWrap": "on"
+}
