@@ -1,7 +1,8 @@
 // import React from 'react';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation } from "swiper"; //TODO 
+// import { Navigation } from "swiper"; //obsolete 
+import { Navigation } from "swiper/modules"; 
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,7 +17,8 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('reviews.json')
+        // fetch('reviews.json')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
@@ -28,9 +30,8 @@ const Testimonials = () => {
                 heading={'Testimonials'}
             ></SectionTitle>
 
-            {/* TODO */}
-            {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> */}
-            <Swiper navigation={true} className="mySwiper">
+            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            {/* <Swiper navigation={true} className="mySwiper"> */}
 
                 {
                     reviews.map(review => <SwiperSlide

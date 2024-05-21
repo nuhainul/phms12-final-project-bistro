@@ -405,4 +405,69 @@ app.use(cors());
 app.use(express.json());
 ```
 
-<!-- 102. [start 65-8] -->
+102. on server-side `index.js`, replaced `const uri = "mongodb+srv://<username>:<password>@cluster0.mcet7hn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";` with the following: 
+```
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.mcet7hn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+```
+
+104. ran `nodemon index.js` and checked if mongodb connection is successful. 
+
+105. went to MongoDB documentation > `Resources` > `Crud Operations` > `Usage Examples` > `Find Multiple Documents`. 
+
+106. commented the followings: 
+first, 
+```
+// Connect the client to the server	(optional starting in v4.7)
+   await client.connect();
+   // Send a ping to confirm a successful connection
+   await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+```
+and then, 
+```
+// Ensures that the client will close when you finish/error
+    await client.close();
+```
+
+
+107. before ``} finally {``, added the following: 
+```
+const menuCollection = client.db("bistroDb").collection("menu");
+
+    app.get('/menu', async(req, res) =>{
+        const result = await menuCollection.find().toArray();
+        res.send(result);
+    })
+```
+
+108. went to `http://localhost:5000/menu` to check if the data is loaded from MongoDB. 
+
+109. went to *client-side* `useMenu.jsx` and replaced `fetch('menu.json')` with `fetch('http://localhost:5000/menu')` in line-7-8. 
+
+110. went to *server-side* `index.js` and added `` const reviewCollection = client.db("bistroDb").collection("reviews");`` (below ``const menuCollection = client.db("bistroDb").collection("menu");``) and added 
+```
+app.get('/reviews', async(req, res) =>{
+        const result = await reviewCollection.find().toArray();
+        res.send(result);
+    })
+```
+below: 
+```
+app.get('/menu', async(req, res) =>{
+        const result = await menuCollection.find().toArray();
+        res.send(result);
+    })
+```
+
+111. went to `Testimonilas.jsx` (on *client-side*) and replaced ``fetch('reviews.json')`` with ``fetch('http://localhost:5000/reviews')``. 
+
+112. **swiper problem:** replace ``import { Pagination } from "swiper";`` with the following: 
+```
+import { Pagination } from 'swiper/modules';
+```
+
+113. went to `OrderTab.jsx` and added `swiper`. 
+
+<!-- start of 66 -->
+
+114. 

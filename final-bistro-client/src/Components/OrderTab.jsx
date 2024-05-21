@@ -2,7 +2,9 @@
 
 import FoodCard from "./FoodCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Pagination } from "swiper"; //TODO 
+// import { Pagination } from "swiper"; //obsolete 
+// // import required modules
+import { Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -19,7 +21,7 @@ const OrderTab = ({ items }) => {
 
             <Swiper
                 pagination={pagination}
-                // modules={[Pagination]} //TODO
+                modules={[Pagination]} 
                 className="mySwiper"
             >
                 <SwiperSlide>
